@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For My Beloved Allie 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Parisienne&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Playfair Display', serif;
+      background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+      color: #880e4f;
+      text-align: center;
+      overflow-x: hidden;
+      min-height: 100vh;
+      background-image: url('https://www.transparenttextures.com/patterns/soft-circle-scales.png');
+      animation: backgroundPulse 20s infinite alternate;
+      position: relative;
+    }
+
+    @keyframes backgroundPulse {
+      0% { background-color: #fce4ec; }
+      50% { background-color: #f8bbd0; }
+      100% { background-color: #fce4ec; }
+    }
+
+    /* Typography */
+    h1 {
+      margin: 5vh auto 3vh;
+      font-size: clamp(3rem, 10vw, 5rem);
+      color: #ff4081;
+      text-shadow: 0 0 10px rgba(255, 128, 171, 0.7);
+      font-family: 'Parisienne', cursive;
+      animation: float 3s infinite ease-in-out;
+      line-height: 1.2;
+      padding: 0 20px;
+    }
+
+    .message {
+      font-size: clamp(1.5rem, 5vw, 2.2rem);
+      margin: 3vh auto;
+      color: #ad1457;
+      padding: 0 20px;
+      max-width: 90%;
+      animation: fadeIn 3s ease-out;
+      line-height: 1.6;
+      font-family: 'Great Vibes', cursive;
+      text-shadow: 1px 1px 3px rgba(255, 192, 203, 0.5);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Heart Button */
+    .love-button {
+      margin: 5vh auto;
+      font-size: clamp(1.5rem, 5vw, 2rem);
+      cursor: pointer;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 50px;
+      background: linear-gradient(45deg, #ff4081, #ff80ab);
+      color: white;
+      box-shadow: 0 5px 15px rgba(255, 64, 129, 0.4);
+      transition: all 0.3s ease;
+      font-family: 'Playfair Display', serif;
+      position: relative;
+      overflow: hidden;
+      z-index: 5;
+      width: 80%;
+      max-width: 300px;
+      display: block;
+    }
+
+    .love-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: 0.5s;
+    }
+
+    .love-button:hover::before {
+      left: 100%;
+    }
+
+    .love-button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(255, 64, 129, 0.6);
+    }
+
+    /* Hidden Love Letter */
+    #love-letter {
+      display: none;
+      margin: 5vh auto;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 5px 20px rgba(255, 105, 180, 0.3);
+      animation: fadeIn 1.5s ease-out;
+      text-align: left;
+      border: 1px solid #f8bbd0;
+      position: relative;
+    }
+
+    #love-letter h2 {
+      text-align: center;
+      font-family: 'Parisienne', cursive;
+      color: #ff4081;
+      font-size: clamp(2rem, 7vw, 2.8rem);
+      margin-bottom: 20px;
+    }
+
+    #love-letter p {
+      margin-bottom: 15px;
+      font-size: clamp(1rem, 4vw, 1.2rem);
+      line-height: 1.8;
+      text-indent: 20px;
+    }
+
+    .signature {
+      text-align: right;
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(1.8rem, 6vw, 2.5rem);
+      color: #ff4081;
+      margin-top: 20px;
+    }
+
+    /* Heart Element */
+    .heart-container {
+      margin: 5vh auto;
+      position: relative;
+      width: 120px;
+      height: 120px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .heart {
+      width: 100%;
+      height: 100%;
+      animation: heartbeat 1.5s infinite, float 4s infinite ease-in-out;
+      filter: drop-shadow(0 0 10px rgba(255, 64, 129, 0.6));
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .heart:hover {
+      transform: scale(1.1);
+    }
+
+    @keyframes heartbeat {
+      0% { transform: scale(1); }
+      25% { transform: scale(1.1); }
+      50% { transform: scale(1); }
+      75% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    /* Floating Hearts Background */
+    .floating-hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .floating-hearts span {
+      position: absolute;
+      color: #ff4081;
+      opacity: 0.6;
+      animation: floatUp linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% { 
+        transform: translateY(100vh) translateX(0) rotate(0deg); 
+        opacity: 0; 
+      }
+      10% { opacity: 0.6; }
+      90% { opacity: 0.6; }
+      100% { 
+        transform: translateY(-100px) translateX(calc(-50vw + 100px)) rotate(360deg); 
+        opacity: 0; 
+      }
+    }
+
+    /* Footer */
+    .footer {
+      position: fixed;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      color: #ff80ab;
+      font-size: clamp(1.2rem, 4vw, 1.5rem);
+      font-family: 'Great Vibes', cursive;
+      z-index: 10;
+      text-shadow: 0 0 5px rgba(255, 128, 171, 0.5);
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      0% { text-shadow: 0 0 5px rgba(255, 128, 171, 0.5); }
+      100% { text-shadow: 0 0 15px rgba(255, 128, 171, 0.8); }
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 480px) {
+      .message {
+        font-size: clamp(1.3rem, 6vw, 1.8rem);
+      }
+      
+      .love-button {
+        padding: 12px 25px;
+        width: 85%;
+      }
+      
+      #love-letter {
+        padding: 15px;
+      }
+      
+      .heart-container {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="floating-hearts" id="floatingHearts"></div>
+  
+  <main>
+    <h1>My Dearest Allie 💖</h1>
+    
+    <div class="message">
+      Every beat of my heart whispers your name,<br>
+      Every star in the sky carries your flame.
+    </div>
+    
+    <div class="message" style="animation-delay: 0.5s;">
+      In a world full of chaos and noise,<br>
+      You are my peace, my heart's sweetest joys.
+    </div>
+    
+    <button class="love-button" onclick="revealLoveLetter()">
+      Open My Heart's Letter 💌
+    </button>
+    
+    <div id="love-letter">
+      <h2>My Eternal Love</h2>
+      
+      <p>My darling Allie,</p>
+      
+      <p>From the moment our souls touched, I knew I had found my forever. Your laughter is the melody that brightens my darkest days, your smile the sunrise that paints my world in gold.</p>
+      
+      <p>When I look into your eyes, I see the reflection of all my dreams coming true. The way your hand fits perfectly in mine, the way you understand me without words - these are the miracles I thank the universe for every day.</p>
+      
+      <p>I promise to cherish you through all of life's seasons - to be your shelter in storms, your partner in adventure, and your greatest supporter in every dream. I will memorize every curve of your smile, every note of your laughter, as if they were sacred verses.</p>
+      
+      <p>Even when we're apart, you're with me in every heartbeat, in every breath. You've become my greatest love story, and I can't wait to write countless chapters with you.</p>
+      
+      <p>Thank you for being you - perfectly, wonderfully you. My heart is and always will be yours.</p>
+      
+      <div class="signature">Forever Yours</div>
+    </div>
+    
+    <div class="heart-container">
+      <img class="heart" src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="Heart" onclick="createHearts()">
+    </div>
+  </main>
+  
+  <div class="footer">
+    Always & Forever, Your Soulmate
+  </div>
+  
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2023/03/28/audio_b01f7e4fc7.mp3?filename=romantic-piano-145983.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    // Create floating hearts
+    function createFloatingHearts() {
+      const container = document.getElementById('floatingHearts');
+      const heartColors = ['#ff4081', '#ff80ab', '#f8bbd0', '#ffcdd2'];
+      
+      for (let i = 0; i < 15; i++) {
+        setTimeout(() => {
+          const heart = document.createElement('span');
+          heart.innerHTML = '❤';
+          heart.style.color = heartColors[Math.floor(Math.random() * heartColors.length)];
+          heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+          heart.style.left = Math.random() * 100 + 'vw';
+          heart.style.animationDuration = (Math.random() * 15 + 10) + 's';
+          heart.style.animationDelay = Math.random() * 5 + 's';
+          container.appendChild(heart);
+          
+          // Remove heart after animation
+          setTimeout(() => {
+            heart.remove();
+          }, (parseFloat(heart.style.animationDuration) + parseFloat(heart.style.animationDelay)) * 1000);
+        }, i * 500);
+      }
+    }
+    
+    // Create hearts on click
+    function createHearts() {
+      const colors = ['#ff4081', '#ff80ab', '#f8bbd0', '#ffcdd2'];
+      const container = document.querySelector('main');
+      
+      for (let i = 0; i < 10; i++) {
+        const heart = document.createElement('div');
+        heart.innerHTML = '❤';
+        heart.style.position = 'absolute';
+        heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+        heart.style.fontSize = (Math.random() * 30 + 20) + 'px';
+        heart.style.left = (Math.random() * 80 + 10) + 'vw';
+        heart.style.top = '80vh';
+        heart.style.animation = `floatUp ${Math.random() * 3 + 3}s linear forwards`;
+        heart.style.opacity = '0.8';
+        heart.style.zIndex = '5';
+        container.appendChild(heart);
+        
+        setTimeout(() => {
+          heart.remove();
+        }, 5000);
+      }
+    }
+    
+    // Reveal love letter
+    function revealLoveLetter() {
+      const letter = document.getElementById('love-letter');
+      letter.style.display = 'block';
+      letter.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      
+      // Create celebration hearts
+      for (let i = 0; i < 8; i++) {
+        setTimeout(() => {
+          createHearts();
+        }, i * 300);
+      }
+    }
+    
+    // Initialize
+    window.onload = function() {
+      createFloatingHearts();
+      
+      // Refresh floating hearts periodically
+      setInterval(createFloatingHearts, 20000);
+      
+      // Make heart interactive
+      document.querySelector('.heart').addEventListener('click', createHearts);
+    };
+  </script>
+</body>
+</html>
